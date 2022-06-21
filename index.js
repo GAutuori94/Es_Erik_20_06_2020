@@ -66,15 +66,22 @@ console.log("Numbers of category items", getCategoryCount(getCategoryCode("bevan
     ---------------------------------------
 */
 
-function removeFromCart (id) {
-for (let i = 0; i < productsInCart.length; i++) {
-if (productsInCart[i].id === id) {
-	productsInCart.splice(i, 1) }
-  return productsInCart;
-  }
- }
-  
-console.log(removeFromCart(324234));
+const removeFromCart = (idProduct)=>{
+    const newArr = productsInCart.map(obj => {
+        if (obj.id === idProduct) {
+          return {...obj, quantity: obj.quantity - 1};
+        }
+        return obj;
+      });
+      const index = newArr.findIndex(obj => {
+        return obj.id === idProduct;
+      });
+     if(newArr.find(product=> product.id === idProduct).quantity <= 0 ){
+        newArr.splice(index,1);
+     }
+        return newArr;
+   }
+   console.log(removeFromCart(432432));
 
 
 /*
