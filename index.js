@@ -45,7 +45,7 @@ console.log(getTotalAmount());
 
 const getCategoryCode  = (categoryName) => categories.find((category) => category.name === categoryName)?.id;
 
-console.log(getCategoryCode("pizze"));
+console.log(getCategoryCode("pizzee"));
 
 console.log(getCategoryCode("panini"));
 
